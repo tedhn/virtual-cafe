@@ -59,7 +59,6 @@ function App() {
   // }, []);
 
   const togglePlay = () => {
-    console.log(playlist);
     setPlaying(!playing);
   };
 
