@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/virtual-cafe/static/css/main.841337a9.chunk.css",
+    "main.js": "/virtual-cafe/static/js/main.49baa777.chunk.js",
+    "main.js.map": "/virtual-cafe/static/js/main.49baa777.chunk.js.map",
+    "runtime-main.js": "/virtual-cafe/static/js/runtime-main.87dabc01.js",
+    "runtime-main.js.map": "/virtual-cafe/static/js/runtime-main.87dabc01.js.map",
+    "static/js/2.ba3351b0.chunk.js": "/virtual-cafe/static/js/2.ba3351b0.chunk.js",
+    "static/js/2.ba3351b0.chunk.js.map": "/virtual-cafe/static/js/2.ba3351b0.chunk.js.map",
+    "static/js/3.4c166f4b.chunk.js": "/virtual-cafe/static/js/3.4c166f4b.chunk.js",
+    "static/js/3.4c166f4b.chunk.js.map": "/virtual-cafe/static/js/3.4c166f4b.chunk.js.map",
+    "index.html": "/virtual-cafe/index.html",
+    "static/css/main.841337a9.chunk.css.map": "/virtual-cafe/static/css/main.841337a9.chunk.css.map",
+    "static/js/2.ba3351b0.chunk.js.LICENSE.txt": "/virtual-cafe/static/js/2.ba3351b0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87dabc01.js",
+    "static/js/2.ba3351b0.chunk.js",
+    "static/css/main.841337a9.chunk.css",
+    "static/js/main.49baa777.chunk.js"
+  ]
+}
