@@ -54,11 +54,12 @@ function App() {
   // "",
   // ];
 
-  React.useEffect(() => {
-    setPlaylist((playlist) => _.shuffle(playlist));
-  }, []);
+  // React.useEffect(() => {
+  //   setPlaylist((playlist) => _.shuffle(playlist));
+  // }, []);
 
   const togglePlay = () => {
+    console.log(playlist);
     setPlaying(!playing);
   };
 
