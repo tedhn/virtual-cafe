@@ -7,24 +7,17 @@ const socket = io("http://localhost:5000");
 
 const ContextProvider = ({ children }) => {
   const [me, setMe] = useState("");
-  const [others, setOthers] = useState([]);
-  const [stream, setStream] = useState();
-
-  const myVid = useRef();
-  const otherUserVids = [];
-  const tempRefs = useRef();
-  const connectionRef = useRef();
+  const [peer, setPeers] = useState([]);
+  const socketRef = useRef();
+  const userVideo = useRef();
+  const peerRef = useRef([]);
 
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: true, video: false })
-      .then((currentStream) => {
-        setStream(currentStream);
-
-        myVid.current.srcObject = currentStream;
+      .then((stream) => {
+        userVideo.current.srcObject = stream;
       });
-
-    socket.on("me", (id) => setMe(id));
   });
 
   const createTable = () => {

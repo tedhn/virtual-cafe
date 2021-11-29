@@ -25,18 +25,7 @@ const Home: React.FC<Props> = ({
 }) => {
   const [id, setId] = useState("");
 
-  const {
-    leaveCall,
-    callUser,
-    callEnded,
-    findId,
-    call,
-    answerCall,
-    callAccepted,
-    createTable,
-    joinTable,
-    userVid,
-  } = useContext(SocketContext);
+  const { createTable, joinTable } = useContext(SocketContext);
 
   return (
     <div className="">
@@ -72,15 +61,12 @@ const Home: React.FC<Props> = ({
         <button onClick={() => joinTable(id)}>join table</button>
       </div>
 
-      <div>
+      {/* <div>
         <button onClick={findId}>find my id</button>
-
-        {call.isRecieveCall && !callAccepted && (
-          <button onClick={answerCall}>accept Call</button>
-        )}
+        <button onClick={findusers}>find a;; users</button>
 
         <button onClick={leaveCall}>Leave Call</button>
-      </div>
+      </div> */}
 
       <div>
         <button onClick={createTable}>New Table</button>
