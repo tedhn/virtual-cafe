@@ -1,4 +1,4 @@
-.App {
+.Home {
   background-color: #ffcdb2;
   height: 100vh;
   width: 100vw;
@@ -18,10 +18,27 @@
   .cafeName {
     font-family: "Oleo Script", cursive;
     font-size: 64px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.logo {
+      @extend .cafeName;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      height: 10px;
+      font-size: 18px;
+    }
   }
 
   .button {
     cursor: pointer;
     font-size: 24px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

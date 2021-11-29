@@ -1,5 +1,4 @@
 {
-  "name": "virtual-cafe",
   "homepage": "https://tedhn.github.io/virtual-cafe/",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +18,8 @@
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "react-scripts": "4.0.3",
+    "simple-peer": "^9.11.0",
+    "socket.io-client": "^4.4.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
     "ytdl-core": "^4.9.1"
