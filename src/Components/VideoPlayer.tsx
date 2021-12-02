@@ -1,22 +1,30 @@
-import React, { useContext, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { SocketContext } from "../socketContext";
 
-const VideoPlayer = () => {
-  // const {} = useContext(SocketContext);
+interface Props {
+  peer: any;
+}
+
+const VideoPlayer: React.FC<Props> = ({ peer }) => {
+  const vidref = useRef();
+
+  useEffect(() => {
+    peer.on("stream", (stream: any) => {
+      //@ts-ignore
+      vidref.current.srcObject = stream;
+    });
+  }, []);
 
   return (
     <div>
-      {/* {users.map((value: any, index: number) => {
-        return (
-          <div
-            ref={(element) => {
-              userVids.current[index] = element;
-            }}
-          >
-            {value}
-          </div>
-        );
-      })} */}
+      <video
+        playsInline
+        muted
+        autoPlay
+        className="myVid"
+        ref={vidref.current}
+        style={{ display: "flex", zIndex: 6 }}
+      />
     </div>
   );
 };

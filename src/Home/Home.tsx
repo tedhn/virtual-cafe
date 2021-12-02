@@ -25,7 +25,14 @@ const Home: React.FC<Props> = ({
 }) => {
   const [id, setId] = useState("");
 
-  const { createTable, joinTable } = useContext(SocketContext);
+  const {
+    createTable,
+    joinTable,
+    findMyId,
+    findAllUsers,
+    peersRef,
+    uservideoRef,
+  } = useContext(SocketContext);
 
   return (
     <div className="">
@@ -61,19 +68,24 @@ const Home: React.FC<Props> = ({
         <button onClick={() => joinTable(id)}>join table</button>
       </div>
 
-      {/* <div>
-        <button onClick={findId}>find my id</button>
-        <button onClick={findusers}>find a;; users</button>
+      <div>
+        <button onClick={findMyId}>find my id</button>
+        <button onClick={findAllUsers}>find a;; users</button>
 
-        <button onClick={leaveCall}>Leave Call</button>
-      </div> */}
+        {/* <button onClick={leaveCall}>Leave Call</button> */}
+        {console.log(peersRef)}
+      </div>
 
       <div>
         <button onClick={createTable}>New Table</button>
       </div>
 
       <div style={{ position: "absolute", left: "50px", cursor: "pointer" }}>
-        <VideoPlayer />
+        <video muted autoPlay ref={uservideoRef} />
+
+        {peersRef.current.map((peer: any) => {
+          return <VideoPlayer peer={peer} />;
+        })}
       </div>
     </div>
   );
