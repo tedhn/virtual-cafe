@@ -6,14 +6,14 @@ interface Props {
 }
 
 const VideoPlayer: React.FC<Props> = ({ peer }) => {
-  const vidref = useRef();
+  const vidref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    peer.on("stream", (stream: any) => {
-      //@ts-ignore
-      vidref.current.srcObject = stream;
+    console.log(peer);
+    peer.peer.on("stream", (stream: any) => {
+      vidref.current!.srcObject = stream;
     });
-  }, []);
+  }, [peer]);
 
   return (
     <div>
@@ -22,7 +22,7 @@ const VideoPlayer: React.FC<Props> = ({ peer }) => {
         muted
         autoPlay
         className="myVid"
-        ref={vidref.current}
+        ref={vidref}
         style={{ display: "flex", zIndex: 6 }}
       />
     </div>

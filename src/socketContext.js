@@ -20,6 +20,8 @@ const ContextProvider = ({ children }) => {
           video: true,
           audio: true,
         });
+        console.log(stream);
+
         uservideoRef.current.srcObject = stream;
 
         socketRef.current.on("all users", ({ users, callerId }) => {
@@ -58,6 +60,7 @@ const ContextProvider = ({ children }) => {
 
   const findMyId = () => {
     socketRef.current.emit("find my id");
+    console.log(uservideoRef);
 
     socketRef.current.on("ur id", (id) => console.log(id));
   };
